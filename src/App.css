@@ -1,17 +1,35 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
 #root{
   width: auto;
   height: 1000px;
 }
+.header{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(225, 55, 55);
+
+}
 
 #onetofive{
   display: flex;
+  justify-content: space-around;
   width: auto;
-  gap: 20px;
+  padding: 10px;
 }
 
 .pokemon{
   height: 175px;
   width: 200px;
+  padding: 10px;
+  border: 1px black solid;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 img{

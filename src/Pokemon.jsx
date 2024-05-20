@@ -18,9 +18,9 @@ useEffect(() => {
 }, []);
 
 return (
-    <div id="one">
+    <>
     {imgUrl && <img src={imgUrl}/>}
-    </div>
+    </>
 );
 };
 

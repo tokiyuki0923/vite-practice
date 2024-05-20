@@ -6,9 +6,15 @@
 #onetofive{
   display: flex;
   width: auto;
+  gap: 20px;
 }
 
 .pokemon{
-  height: 500px;
-  width: 300px;
+  height: 175px;
+  width: 200px;
+}
+
+img{
+  width: 175px;
+  height: 175px;
 }

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Pokemon = () => {
 const [imgUrl, setImgUrl] = useState('');
 
+//useEffectは非同期処理のためのコンポーネント
 useEffect(() => {
     const fetchPokemon = async () => {
     try {

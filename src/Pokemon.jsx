@@ -12,7 +12,7 @@ useEffect(() => {
         const spriteUrl = data.sprites.other.dream_world.front_default;
         setImgUrl(spriteUrl);
     } catch (error) {
-        console.error('Error fetching Pokemon data:', error);
+        console.error('Errorですよ', error);
     }
     };
     fetchPokemon();

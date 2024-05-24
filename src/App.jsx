@@ -1,7 +1,7 @@
 import './App.css';
 import Pokemon from"./Pokemon.jsx";
 
-function App() {
+const App =()=> {
   return (
   <>
     <div className ='header'>

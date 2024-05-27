@@ -11,8 +11,8 @@ function App() {
       <div id='one' className='pokemon'><Pokemon /></div>
       <div id='two' className='pokemon'><Pokemon /></div>
       <div id='three' className='pokemon'><Pokemon /></div>
-      <div id='four' className='pokemon'></div>
-      <div id='five' className='pokemon'></div>
+      <div id='four' className='pokemon'><Pokemon /></div>
+      <div id='five' className='pokemon'><Pokemon /></div>
     </div>
   </>
   )

@@ -1,21 +1,39 @@
+import React, { useState, useEffect } from 'react';
+import Pokemon from './Pokemon';
 import './App.css';
-import Pokemon from"./Pokemon.jsx";
 
 function App() {
+  const [pokemon, setPokemon] = useState([]);
+
+  useEffect(() => {
+    const fetchPokemon = async () => {
+      const promises = [];
+      for (let i = 1; i <= 1025; i++) { 
+        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        promises.push(fetch(url).then(res => res.json()));
+      }
+
+      const results = await Promise.all(promises);
+      const pokemonData = results.map(data => ({
+        name: data.name,
+        id: data.id,
+        image: data.sprites.front_default,
+        type: data.types.map(type => type.type.name).join(', ')
+      }));
+      setPokemon(pokemonData);
+    };
+
+    fetchPokemon();
+  }, []);
+
   return (
-  <>
-    <div className ='header'>
-      <div className='logo'><h2>ポケモン図鑑</h2></div>
+    <div className="App">
+      <header className="header">
+        <h1>ポケモン図鑑</h1>
+      </header>
+      <Pokemon pokemon={pokemon} />
     </div>
-    <div id='onetofive'>
-      <div id='one' className='pokemon'><Pokemon /></div>
-      <div id='two' className='pokemon'><Pokemon /></div>
-      <div id='three' className='pokemon'><Pokemon /></div>
-      <div id='four' className='pokemon'><Pokemon /></div>
-      <div id='five' className='pokemon'><Pokemon /></div>
-    </div>
-  </>
-  )
+  );
 }
 
-export default App
+export default App;

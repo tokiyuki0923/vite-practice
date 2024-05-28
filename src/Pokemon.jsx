@@ -1,28 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Card from './Card';
 
-const Pokemon = () => {
-const [imgUrl, setImgUrl] = useState('');
-
-//useEffectは非同期処理のためのコンポーネント。つまりAPIを使用するときに使う
-useEffect(() => {
-    const fetchPokemon = async () => {
-    try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon/1');
-        const data = await response.json();
-        const spriteUrl = data.sprites.other.dream_world.front_default;
-        setImgUrl(spriteUrl);
-    } catch (error) {
-        console.error('Errorですよ', error);
-    }
-    };
-    fetchPokemon();
-}, []);
-
+const Pokemon = ({ pokemon }) => {
 return (
-    <>
-    {imgUrl && <img src={imgUrl}/>}
-    </>
+    <div className="pokemon-list">
+    {pokemon.map(pokemon => (
+        <Card key={pokemon.id} pokemon={pokemon} />
+    ))}
+    </div>
 );
 };
 
-export default Pokemon
+export default Pokemon;
+

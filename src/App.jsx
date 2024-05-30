@@ -22,7 +22,6 @@ function App() {
       }));
       setPokemon(pokemonData);
     };
-
     
     fetchPokemon();
   }, []);
@@ -36,5 +35,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
